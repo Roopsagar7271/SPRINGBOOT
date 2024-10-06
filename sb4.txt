@@ -1,0 +1,220 @@
+RestController
+==============
+RestController is used to develop restful web services using @RestController annotation.
+
+It is a class level annotation and allows a class to handle all the request made by client.
+
+@RestController is a combination of two annotations i.e @Controller and @ResponseBody .
+
+We have following HTTP methods along with rest annotations.
+
+ex:
+	HTTP Method		Annotation
+	-----------		-----------
+	GET			@GetMapping
+	POST			@PostMapping
+	PUT			@PutMapping 
+	DELETE			@DeleteMapping 
+	and etc.		
+
+ex:						ex:
+
+@Controller						@RestController
+class  HomeController					class HomeController					
+{							{
+	@RequestMapping("/msg")					
+	@ResponseBody						@GetMapping
+	public String home()					public String home()
+	{							{
+		return "Hello";						return "Hello";
+	}							}
+}							}
+
+Project Structure
+-----------------
+FourthSB
+|
+|---src/main/java
+|	|
+	|---com.ihub.www
+		|
+		|---FourthSBApplication.java
+		|---HomeController.java
+		
+|---src/main/resources
+|		|		
+		|---application.yml (Yet Another Markup Language)
+
+|---src/test/java
+|
+|---pom.xml 
+
+step1:
+-----
+	Launch STS IDE by choosing workspace location.
+
+step2:
+-----
+	Create a spring starter project i.e. FourthSB.
+	ex:
+		starter:
+				spring web 
+
+step3:
+-----
+	Rename application.properties to application.yml file.
+
+step4:
+-----
+	Configure Tomcat server port number.
+
+application.yml
+--------------
+server:
+  port: 9090
+
+spring:
+  application:
+    name: FOURTHSB
+
+step5:
+------
+	Create a HomeController inside "com.ihub.www" base package.
+
+HomeController.java
+------------------
+package com.ihub.www;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HomeController 
+{
+	//handler method
+	@GetMapping("/msg")
+	public String home()
+	{
+		return "I Love Spring Boot";
+	}
+}
+
+step6:
+-----
+	Run spring boot starter project.
+
+step7:
+-----
+	Test the application by using below request url.
+	ex:
+		http://localhost:9090/msg 
+
+
+
+Q) What is the difference between @Controller and @RestController?
+
+@Controller					@RestController
+-------------					----------------
+It is used to develop sprinng MVC based 	It is used to develop restful web services.
+applications.
+
+It is a specialized version of @Component	It is a specialized version of @Controller 
+annotation.					annotation.
+
+We need to use @ResponseBody annotation in	It is a combination of @Controller and 
+every handler method.				@ResponseBody annotation.
+
+It returns view in spring MVC.			It does not return view.
+
+It is add to spring 2.5 version.		It is add to spring 4.0 version.
+
+Monolithic Architecture vs Micro Service Architecture
+====================================================
+
+Monolithic Architecture
+-----------------------
+A monolithic means composed all in one.
+
+In monolithic architecture, we will develop individual services and at the end of the development
+we will package all the services in a single war and later that war file will be deployed in a 
+server.
+
+Diagram: sb4.1
+
+Advantages:
+
+1) Simple Develop 
+
+2) Simple Deploy
+
+3) Simple Test 
+
+4) Simple Scale 
+
+Disadvantages:
+
+1) Large and Complex applications 
+
+2) It blocks cotineous develop
+
+3) Slow Development 
+
+4) Inflexible 
+
+5) Inreliable 
+
+
+Micro Service Architecture
+---------------------------
+Microservices are the small services that work together
+
+The microservice defines an approach to the architecture that divides an application into 
+a pool of loosely coupled services that implements business requirements. 
+
+In Microservice architecture,Each service is self contained and implements a single bussiness 
+capability.
+
+The microservice architectural style is an approach to develop a single application
+as a suite of small services.It is next to Service-Oriented Architecture (SOA). 
+
+Each microservice runs its process and communicates with lightweight mechanisms.
+
+These services are built around business capabilities and independently developed by 
+fully automated deployment machinery.
+
+
+Advantages:
+
+1) Independent development 
+
+2) Independent deployment 
+
+3) Fault Tolerance 
+
+4) Mixed Technology stack 
+
+5) Granular Scaling 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,303 @@
+Download STS IDE
+=================
+Download link:	https://spring.io/tools
+
+
+First Spring Boot Application Development
+==========================================
+FirstSB
+|
+|---src/main/java
+	|
+	|---com.ihub.www (base package)
+		|
+		|---FirstSBApplication.java
+|
+|---src/main/resources
+	|	
+	|---application.properties
+|
+|---src/test/java 
+|
+|---pom.xml 
+
+Step1:
+------
+	Launch STS IDE by choosing workspace location.
+
+step2:
+------
+	Create a spring boot starter project i.e FirstSB.
+	ex:
+		File --> new --> spring starter project --> 
+		Name: FirstSB
+		Type : Maven 		Packaging : jar 
+		Java version : 17	Language  : java
+
+		Group : com.kits.www
+		Artifact : FirstSB
+		Description : First Spring Demostration 
+		package  : com.kits.www 
+		--> Next --> Next --> Finish. 
+
+
+step3:
+-----
+	Add custom message inside "FirstSBApplication.java" file.
+
+FirstSBApplication.java
+-------------------------
+package com.ihub.www;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class FirstSbApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(FirstSbApplication.class, args);
+		
+		System.out.println("I Love Spring Boot ");
+	}
+
+}
+
+step4:
+------
+	Run spring boot starter project.
+	ex:
+		right click to FirstSB project --> run as --> spring boot application.
+
+
+
+
+Q) What is @SpringBootApplication annotation?
+
+@SpringBootApplication annotation is a combination of three annotations.
+
+1) @AutoConfiguration 
+---------------------
+	This annotation is used to enable auto configuration mechanism.
+
+2) @ComponentScan
+------------------
+	This annotation is used to scan on package in which our project is located.
+
+3) @Configuration 
+-----------------
+	This annotation is used to add extra beans to context.	
+
+Spring Boot starters
+=====================
+Spring boot supports number of starters to add jar files in CLASSPATH.
+
+Spring boot contains built-in starters to develop applications rapidly and easily.
+
+Spring boot starters are also known as dependency descriptors.
+
+Spring boot built-in starters following below naming patterns.
+
+ex:
+	spring-boot-stater-*
+
+	Here '*' means name of the application.
+
+ex:
+---
+	spring-boot-starter-web
+	spring-boot-starter-test
+	spring-boot-starter-data-jpa
+	spring-boot-starter-security 
+	and etc.
+
+
+Spring Web dependency
+======================
+A spring web dependency is used to develop web applications in spring boot.
+
+There are two important features of spring-boot-starter-web.
+
+1) It is compatible with web applications.
+
+2) It performs autoconfigurations.
+
+Spring web dependency internally uses Spring MVC, REST and Tomcat (Embedded Server).
+
+A spring-boot-starter-web performs following things as a autoconfigurations.
+
+1) DispatcherServlet 
+
+2) ErrorPages
+
+3) Static dependent dependencies 
+
+4) Servlet container
+
+
+Second Spring Boot Application Development
+==========================================
+SecondSB
+|
+|---src/main/java
+|	|
+	|---com.ihub.www
+		|			
+		|---SecondSBApplication.java
+	|
+	|---com.ihub.www.controller
+		|
+		|---HomeController.java
+
+|---src/main/resources
+	|
+	|---application.properties
+|
+|---src/test/java
+|
+|
+|---pom.xml 
+
+step1:
+-----
+	Create a spring boot starter project i.e SecondSB.
+	ex:
+		starter:	
+				Spring Web
+
+step2:
+-------
+	Create a "com.ihub.www.controller" package inside "src/main/java" folder.
+	 
+step3:
+-----
+	Create a "HomeController.java" file inside "com.kits.www" package.
+
+HomeController.java
+-------------------
+package com.ihub.www.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class HomeController 
+{
+	//handler methods
+	@RequestMapping("/msg")
+	@ResponseBody
+	public String message()
+	{
+		return "I love spring boot from Niyaz sir";
+	}
+}
+
+
+
+step4:
+-----
+	Configure tomcat server port number in application.properties.
+
+application.properties
+----------------------
+server.port=9090
+
+
+step5:
+-----
+	Run the spring boot starter project.
+
+
+step6:
+-----
+	Test the spring boot starter project.
+	ex:
+		http://localhost:9090/msg 
+
+
+
+Interview Questions
+====================
+
+
+Q) What is @Controller annotation ?
+
+It is a class level annotation.
+It is a stereotype annotation.
+This annotation indicates that a particular class serves the role of a controller.
+
+
+
+Q) What is @ResponseBody annotation?
+
+It is a method level annotation.
+This annotation indicates that spring boot should serialize java object into JSON or XML or Text.
+
+
+
+Q) What is @RequestMapping annotation?
+
+It is a class level and method level annotation.
+
+It is used for all kinds of HTTP methods.
+
+It is used to map the request to controller and handler methods.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

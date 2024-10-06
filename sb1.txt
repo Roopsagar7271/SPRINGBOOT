@@ -1,0 +1,172 @@
+Limitions with Spring Framework 
+================================
+In spring framework a programmer is responsible for following things.
+
+1) Adding the dependencies or jar files
+
+2) Performing the configurations in applicationContext.xml file.
+
+3) Arranging physical server like Tomcat.
+
+4) Managing physical database like Oracle.
+
+To overcome this above limitations we need to use spring boot.
+
+ex:
+		Developer
+		    |
+		    |
+		Spring Boot 
+		    |
+		    |
+		Spring Framework 
+
+Spring Boot
+============
+It is a java based application framework developed by Pivotal Team.
+
+It provides RAD (Rapid Application Development) features to spring based applications.
+
+It is a standalone , production ready grade spring based applications with minimum configurations.
+
+In short, spring boot is a combination of 
+
+
+	spring framework	+	Embedded server		+	Embedded Database 
+
+Spring Boot does not support XML operations.Instead we will use annotations.
+
+
+
+Advantages of Spring Boot
+==========================
+It is used to develop standalone application which can run by using java -jar.
+
+It provides production ready grade features like metrix, healthcheck , externalized configurations
+and etc.
+
+It provides optionate starters to simply the maven development process.
+
+It allows us to test web application by using HTTP servers like Tomcat, Jetty and Undertow.
+
+It provides In-memory databases like H2, HSQL and Derby.
+
+It does not support xml configurations.
+
+It contains CLI (Command Line Interface) tool for developing and testing spring boot applications.
+
+
+Interview Questions
+====================
+
+Q) How many components are there in spring boot?
+
+We have four impotant components in spring boot.
+
+1) Autoconfiguration 
+
+2) Starters
+
+3) Actuators 
+
+4) CLI tool
+
+
+
+Q) What is dependency injection ? 
+
+It is a programmatic technique which makes our class independent to it's dependencies.
+
+It is a programmatic technique where one object will pass the dependencies of another.
+
+To perform dependency injection in spring boot we will use @Autowired annotation.
+
+ex:
+	class Recordings
+	{
+		-
+		- //some logic 
+		-
+	}
+	class Student
+	{
+		@Autowired
+		Recordings r;
+	}
+
+
+
+Q) What is the difference between spring framework and spring boot?
+
+spring framework				spring boot
+----------------				--------------
+It is a leight weight open source framework	It is build on top of spring framework widely 
+widely used to develop enterprise applications. used to develop REST API's.
+
+A programmer is responsible to add 		A spring boot component called starter is 
+dependencies.					responsible to add dependencies.
+
+It is used to develop loosely coupled 		It is used to develop standalone applications.
+applications.
+
+The main important feature of spring framework	The main important feature of spring boot is 
+is dependency injection.			autoconfiguration.
+
+To develop web application we need to set 	It comes with embeded servers like Tomcat, Jetty
+physical server.				and Undertow.
+
+It does not provides in memory databases.	It provides in memory database like H2,HSQL,Derby.
+
+
+Q) In how many ways we can develop spring boot project?
+
+There are two ways to develop spring boot project.
+
+1) Using Spring Initializr 
+	
+2) Using IDE's (Spring Tool Suit(STS) / Intellij) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
